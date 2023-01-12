@@ -37,6 +37,9 @@ class MainActivity : AppCompatActivity() {
         childObject.parentFunction(null)
         //Calling parent function when not specifying parameters.
         childObject.parentFunction()
+
+        val childOfAbstractParentObject: ChildOfAbstractParentClass =
+            ChildOfAbstractParentClass("Hello world!")
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
