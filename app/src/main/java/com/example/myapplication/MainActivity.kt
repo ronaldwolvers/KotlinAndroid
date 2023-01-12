@@ -1,6 +1,7 @@
 package com.example.myapplication
 
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
@@ -37,6 +38,17 @@ class MainActivity : AppCompatActivity() {
         childObject.parentFunction(null)
         //Calling parent function when not specifying parameters.
         childObject.parentFunction()
+
+        val someArray: Array<Array<String>> = arrayOf(arrayOf("Some String", "Another String"))
+        for (array in someArray) {
+            for (string in array)
+                Log.i("KotlinAndroid", "String: $string")
+        }
+
+        //Compile error.
+        for (string in array in someArray) {
+            Log.i("KotlinAndroid", "String: $string")
+        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
